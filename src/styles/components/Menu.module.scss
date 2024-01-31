@@ -1,0 +1,31 @@
+@import '../variables.scss';
+@import './Header.module.scss';
+
+.menu {
+  position: relative;
+  width: 100%;
+  &__btn {
+    display: none;
+    margin: 20px;
+    width: 24px;
+    height: 24px;
+    background: $third-color;
+    mask: url('../../../public/menuicon.png') center/contain no-repeat;
+    -webkit-mask: url('../../../public/menuicon.png') center/contain no-repeat;
+    @media (max-width: $md) {
+      display: block;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__items {
+    position: relative;
+    @media (max-width: $md) {
+      position: absolute;
+      border-top: 1px solid $third-color;
+      background-color: $primary-color;
+      width: 100%;
+    }
+  }
+}

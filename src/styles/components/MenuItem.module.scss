@@ -1,0 +1,58 @@
+@import '../variables';
+
+.menuitem {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 18px 20px;
+  color: $fourth-color;
+  font-family: var(--font-museo);
+  z-index: 5;
+  &:hover {
+    background-color: $second-color;
+    cursor: pointer;
+  }
+  &:hover::after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: $second-color;
+    right: -10px;
+    bottom: 22px;
+    rotate: 45deg;
+    @media (max-width: $md) {
+      width: 0;
+      height: 0;
+    }
+  }
+  &__icon {
+    width: 28px;
+    height: 28px;
+    background: $third-color;
+    mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+  }
+  &__text {
+    margin-left: 10px;
+    @media (max-width: $lg) {
+      display: none;
+    }
+    @media (max-width: $md) {
+      display: block;
+      color: $third-color;
+    }
+  }
+  @media (max-width: $md) {
+    padding: 5px 20px;
+  }
+}
+.submenu {
+  display: none;
+  @media (max-width: $md) {
+    display: block;
+  }
+}

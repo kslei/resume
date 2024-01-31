@@ -1,0 +1,194 @@
+@import '../variables.scss';
+
+.header {
+  position: fixed;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+  height: 100vh;
+  width: 100%;
+  animation-name: width;
+  animation-duration: 0.35s;
+  animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  z-index: 2;
+  @media (max-width: $lg) {
+    animation-name: widthLG;
+  }
+  @media (max-width: $md) {
+    top: 0;
+    animation-name: widthMD;
+  }
+}
+@keyframes width {
+  0% { width: 100%; }
+  100% { width: 240px; }
+}
+@keyframes widthLG {
+  0% { width: 100%; }
+  100% { width: 68px; }
+}
+@keyframes widthMD {
+  0% { height: 100vh; }
+  100% { height: 68px; }
+}
+
+.hello {
+  color: $fourth-color;
+  font-size: 72px;
+  z-index: 2;
+  animation-name: transform;
+  animation-duration: 0.35s;
+  animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  animation-delay: 2.85s;
+  animation-fill-mode: forwards;
+  @media (max-width: $lg) {
+    animation-name: transformLG;
+  }
+}
+@keyframes transform {
+  0% {
+    transform: translateY(0);
+    display: block;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(-45vh);
+  }
+  100% {
+    transform: translateY(-45vh);
+    opacity: 0;
+    display: none ;
+  }
+}
+@keyframes transformLG {
+  0% {
+    transform: translateX(0);
+    display: block;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+    display: none;
+  }
+}
+
+.myName {
+  width: 100%;
+  text-align: center;
+  color: $fourth-color;
+  font-size: 36px;
+  margin-bottom: 10px;
+  @media (max-width: $lg) {
+    font-size: inherit;
+    max-width: 68px;
+  }
+  @media (max-width: $md) {
+    margin: 0;
+    max-width: 80px;
+  }
+}
+.nav {
+  position: relative;
+  width: 100%;
+  height: 0;
+  background-color: $primary-color;
+  animation-name: nav;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+  animation-delay: 3.2s;
+  animation-fill-mode: forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transform: scale(0);
+  @media (max-width: $md) {
+    flex-direction: row;
+  }
+  &:hover~.submenu {
+    transition: left;
+    transition-duration: 1s;
+    left: 240px;
+  }
+  &__img {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+    @media (max-width: $lg) {
+      width: 60px;
+      height: 60px;
+      margin: 20px 4px;
+    }
+    @media (max-width: $md) {
+      margin: 4px 20px;
+    }
+  }
+  &__menu {
+    width: 100%;
+    margin: 20px 0;
+    background: transparent;
+    @media (max-width: $md) {
+      margin: 0;
+    }
+  }
+  &__link {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: $md) {
+      position: absolute;
+      width: 50%;
+      right: 0;
+      flex-direction: row-reverse;
+      z-index: 5;
+    }
+    @media (max-width: $sm) {
+      width: 70%;
+    }
+  }
+}
+@keyframes nav {
+  0% {
+    transform: scale(0);
+    height: 0;
+  }
+  100% {
+    transform: scale(1);
+    height: 100%;
+  }
+}
+.submenu {
+  position: absolute;
+  transition: left;
+  transition-duration: 1s;
+  width: 240px;
+  height: 100vh;
+  background-color: $fourth-color;
+  color: $primary-color;
+  top: 0;
+  z-index: -1;
+  left: 0px;
+  &:hover {
+    left: 240px;
+    @media (max-width: $lg) {
+      left: 68px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import '../variables.scss';
+
+.submenuitem {
+  width: 100%;
+  font-size: 18px;
+  color: $second-color;
+  font-family: var(--font-inter);
+  padding: 20px 30px;
+  border-bottom: 1px solid $third-color;
+  &:hover {
+    cursor: pointer;
+    text-decoration-line: underline;
+  }
+  @media (max-width: $md) {
+    padding: 5px 30px 5px 58px;
+    color: $fourth-color;
+    font-size: 16px;
+    font-weight: 300;
+    border-bottom: none;
+  }
+}

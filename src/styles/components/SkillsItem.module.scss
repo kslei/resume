@@ -1,0 +1,59 @@
+@import '../variables.scss';
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $second-color;
+  width: calc(100% / 3 - 10px);
+  padding: 10px;
+  margin: 20px 0;
+  @media (max-width: $xxxl) {
+    width: calc(100% / 2 - 10px);
+  }
+  @media (max-width: $xl) {
+    width: 100%;
+  }
+  @media (max-width: $lg) {
+    width: calc(100% / 2 - 5px);
+  }
+  @media (max-width: $lm) {
+    width: 100%;
+  }
+  @media (max-width: $sm) {
+    padding: 5px;
+  }
+  &__img {
+    //max-width: 550px;
+    width: 100%;
+    //height: 340px;
+    aspect-ratio: 16/10;
+    display: block;
+    object-fit: cover;
+  }
+}
+.content {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  color: $fourth-color;
+  @media (max-width: $sm) {
+    flex-direction: column;
+  }
+  &__title {
+    width: /* 25% */100%;
+    font-weight: 700;
+    @media (max-width: $sm) {
+      width: 100%;
+    }
+  }
+  &__description {
+    width: /* 75% */100%;
+    font-family: var(--font-museo);
+    @media (max-width: $sm) {
+      width: 100%;
+    }
+  }
+}

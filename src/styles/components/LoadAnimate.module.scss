@@ -1,0 +1,20 @@
+@import '../variables.scss';
+
+.animate {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  font-size: 30px;
+  font-weight: 600;
+  &__title {
+    color: transparent;
+    text-shadow: none;
+  }
+  &__title_active {
+    color: $third-color;
+    text-shadow: 2px 2px $second-color;
+  }
+}

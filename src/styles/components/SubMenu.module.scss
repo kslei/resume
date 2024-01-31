@@ -1,0 +1,25 @@
+@import '../variables.scss';
+
+.submenu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  transition: left;
+  transition-duration: 0.4s;
+  width: 240px;
+  height: 100vh;
+  background-color: $fourth-color;
+  top: 0;
+  z-index: -1;
+  left: 0px;
+  &:hover {
+    left: 240px;
+    @media (max-width: $lg) {
+      left: 68px;
+    }
+  }
+  @media (max-width: $md) {
+    display: none;
+  }
+}
