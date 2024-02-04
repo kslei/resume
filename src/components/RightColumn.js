@@ -10,8 +10,8 @@ const RightColumn = () => {
   <div className={styles.rightColumn}>
     {rightColumn.map(item => (
       <div className={styles.rightColumn__img} key={item.id}>
-        <Link href={item.path}>
-          <Image src={item.src} alt={item.alt} width={450} height={280} className={styles.image} />
+        <Link href={item.path} className={styles.image}>
+          <Image src={item.src} alt={item.alt} fill className={styles.img} />
         </Link>
       </div>
     ))}

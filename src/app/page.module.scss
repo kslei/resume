@@ -1,7 +1,9 @@
 .image {
   position: relative;
-  width: 100%;
-  height: auto;
+  width: '100%';
+  aspect-ratio: 2/1;
+  position: 'relative';
+}
+.img {
   object-fit: cover;
-  aspect-ratio: 16/8;
 }

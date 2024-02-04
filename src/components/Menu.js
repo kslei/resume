@@ -7,6 +7,10 @@ import MenuItem from './MenuItem';
 const Menu = ({menu, setId}) => {
   const [vis, setVis] = useState(true);
   const [width, setWidth] = useState(null);
+  let style = {
+    WebkitMaskImage: `url('/menuicon.png')`,
+    maskImage: `url('/menuicon.png')`,
+  }
 
   useEffect(()=>{
     if (width === null) setWidth(window.innerWidth)
@@ -21,7 +25,7 @@ const Menu = ({menu, setId}) => {
   
   return (
   <div className={styles.menu} onBlur={() => setVis(false)}>
-    <div className={styles.menu__btn} onClick={() => setVis(!vis)}></div>
+    <div className={styles.menu__btn} onClick={() => setVis(!vis)} style={style}></div>
     {vis && 
       <div className={styles.menu__items}>
         {menu && menu.map(item => (

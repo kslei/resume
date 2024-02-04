@@ -18,7 +18,7 @@ export const metadata = {
   title: "my CV",
   description: "my CV frontend dev",
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.png',
   }
 };
 

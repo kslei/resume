@@ -10,6 +10,11 @@
 }
 .image {
   display: block;
+  position: relative;
+  width: 450px;
+  height: 280px;
+}
+.img {
   object-fit: cover;
   scale: 1;
   &:hover {

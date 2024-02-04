@@ -1,5 +1,4 @@
 import Image from "next/image";
-import source from '../../public/html-system-websites-collage-design.jpg';
 import RightColumn from "@/components/RightColumn";
 import styles from "./page.module.scss";
 import './globals.scss';
@@ -8,8 +7,8 @@ export default function Home() {
   return (
     <main>
       <div className='left'>
-        <div>
-          <Image src={source} className={styles.image} alt="main image"/>
+        <div className={styles.image}>
+          <Image src='/html-system-websites-collage-design.jpg' className={styles.img} fill={true} alt="main image"/>
         </div>
         <div className='content'>
           <h1>Front-end developer resume</h1>

@@ -4,11 +4,10 @@ import { Pacifico } from 'next/font/google';
 import Menu from './Menu';
 import SubMenu from './SubMenu';
 import Image from 'next/image';
-import styles from '../styles/components/Header.module.scss';
 import { useState } from 'react';
 import { menu } from '@/consts/const';
-import Me from '../../public/Me.jpg';
 import Link from 'next/link';
+import styles from '../styles/components/Header.module.scss';
 
 const pacifico = Pacifico({
   weight: '400',
@@ -26,13 +25,16 @@ const Header = () => {
     </div>
     <div className={styles.nav}>
       <Link href='/' className={styles.nav__link}>
-        <Image
-          className={styles.nav__img}
-          src={Me}
-          alt='my photo'
-          priority={true}
-          //placeholder='blur'
-        />
+        <div className={styles.nav__image}>
+          <Image
+            className={styles.nav__img}
+            fill
+            src='/Me.jpg'
+            alt='my photo'
+            priority={true}
+          />
+        </div>
+        
         <div className={styles.myName}>
           <p className={pacifico.className}>I'm Sergei</p>
         </div>

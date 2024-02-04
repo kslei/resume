@@ -13,7 +13,7 @@
   animation-name: width;
   animation-duration: 0.35s;
   animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
   z-index: 2;
   @media (max-width: $lg) {
@@ -44,7 +44,7 @@
   animation-name: transform;
   animation-duration: 0.35s;
   animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
-  animation-delay: 2.85s;
+  animation-delay: 1.85s;
   animation-fill-mode: forwards;
   @media (max-width: $lg) {
     animation-name: transformLG;
@@ -59,10 +59,12 @@
     opacity: 1;
   }
   90% {
-    transform: translateY(-45vh);
+    transform: translateY(-50vh);
+    height: 0;
   }
   100% {
-    transform: translateY(-45vh);
+    transform: translateY(-50vh);
+    height: 0;
     opacity: 0;
     display: none ;
   }
@@ -71,16 +73,19 @@
   0% {
     transform: translateX(0);
     display: block;
-  }
-  50% {
     opacity: 1;
   }
+  50% {
+    opacity: 0;
+  }
   90% {
-    transform: translateX(-200px);
+    transform: translateX(-100vw);
+    opacity: 0;
+    height: 100%;
   }
   100% {
-    transform: translateX(-200px);
-    opacity: 0;
+    transform: translateX(-100vw);
+    height: 0;
     display: none;
   }
 }
@@ -108,7 +113,7 @@
   animation-name: nav;
   animation-duration: 300ms;
   animation-timing-function: linear;
-  animation-delay: 3.2s;
+  animation-delay: 2.2s;
   animation-fill-mode: forwards;
   display: flex;
   flex-direction: column;
@@ -124,11 +129,15 @@
     left: 240px;
   }
   &__img {
+    object-fit: cover;
+  }
+  &__image {
+    position: relative;
     width: 200px;
     height: 200px;
     margin: 20px;
-    object-fit: cover;
     border-radius: 50%;
+    overflow: hidden;
     @media (max-width: $lg) {
       width: 60px;
       height: 60px;
